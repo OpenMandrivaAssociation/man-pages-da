@@ -1,9 +1,12 @@
 %define LANG da
+%define name man-pages-%LANG
+%define version 0.1.1
+%define release %mkrel 5
 
 Summary: Danish man pages from the Linux Documentation Project.
-Name: man-pages-%LANG
-Version: 0.1.1
-Release: 4mdk
+Name: %{name}
+Version: %{version}
+Release: %{release}
 License: Distributable
 Group: System/Internationalization
 Patch: manpages-da-0.1.1-manpath.patch
@@ -11,12 +14,11 @@ URL: http://www.sslug.dk/locale/man-sider/
 Source: http://www.sslug.dk/locale/man-sider/manpages-da-%version.tar.bz2
 BuildRoot: %_tmppath/%name-root
 BuildRequires: man => 1.5j-8mdk
-Requires: locales-%LANG, man => 1.5j-8mdk
-Prereq: sed grep man
+Requires: locales-%LANG
+Requires: man => 1.5j-8mdk 
+BuildRequires: sed grep man
 Autoreq: false
 BuildArch: noarch
-Obsoletes: man-%LANG, manpages-%LANG
-Provides: man-%LANG, manpages-%LANG
 
 %description
 A large collection of man pages (reference material) from the Linux 
