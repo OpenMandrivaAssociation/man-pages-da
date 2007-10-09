@@ -3,7 +3,7 @@
 %define version 0.1.1
 %define release %mkrel 5
 
-Summary: Danish man pages from the Linux Documentation Project.
+Summary: Danish man pages from the Linux Documentation Project
 Name: %{name}
 Version: %{version}
 Release: %{release}
