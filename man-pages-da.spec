@@ -12,7 +12,6 @@ Group: System/Internationalization
 Patch: manpages-da-0.1.1-manpath.patch
 URL: http://www.sslug.dk/locale/man-sider/
 Source: http://www.sslug.dk/locale/man-sider/manpages-da-%version.tar.bz2
-BuildRoot: %_tmppath/%name-root
 BuildRequires: man => 1.5j-8mdk
 Requires: locales-%LANG
 Requires: man => 1.5j-8mdk 
