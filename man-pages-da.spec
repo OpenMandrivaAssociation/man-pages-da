@@ -1,7 +1,7 @@
 %define LANG da
 %define name man-pages-%LANG
 %define version 0.1.1
-%define release %mkrel 6
+%define release %mkrel 7
 
 Summary: Danish man pages from the Linux Documentation Project
 Name: %{name}
