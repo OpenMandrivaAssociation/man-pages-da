@@ -1,7 +1,7 @@
 %define LNG da
 %define name man-pages-%LNG
 %define version 0.1.1
-%define release %mkrel 11
+%define release %mkrel 12
 
 Summary: Danish man pages from the Linux Documentation Project
 Name: %{name}
