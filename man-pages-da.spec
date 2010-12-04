@@ -57,6 +57,7 @@ chmod a+x $RPM_BUILD_ROOT/etc/cron.weekly/makewhatis-%LANG.cron
 
 mkdir -p  $RPM_BUILD_ROOT/var/cache/man/%LANG
 
+touch $RPM_BUILD_ROOT/var/cache/man/%LANG/whatis
 
 %postun
 # 0 means deleting the package
@@ -68,6 +69,8 @@ if [ "$1" = "0" ]; then
    fi
 fi
 
+%post
+%create_ghostfile /var/cache/man/%LANG/whatis root root 644
 
 %clean
 rm -fr $RPM_BUILD_ROOT
@@ -77,7 +80,7 @@ rm -fr $RPM_BUILD_ROOT
 %doc læsmig AUTHORS ChangeLog
 %dir %_mandir/%LANG
 %dir /var/cache/man/%LANG
-%config(noreplace) /var/cache/man/%LANG/whatis
+%ghost %config(noreplace) /var/cache/man/%LANG/whatis
 %config(noreplace) %attr(755,root,root)/etc/cron.weekly/makewhatis-%LANG.cron
 %_mandir/%LANG/*
 
