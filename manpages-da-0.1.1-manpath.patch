@@ -1,0 +1,26 @@
+--- manpages-da-0.1.1/Makefile.orig	Mon Jul  3 11:00:10 2000
++++ manpages-da-0.1.1/Makefile	Mon Jul  3 11:06:10 2000
+@@ -1,7 +1,8 @@
+ PREFIX    = /usr
++MANDIR	  = $(PREFIX)/share/man
+ PACKAGE   = manpages-da
+ VERSION   = 0.1.1
+-DATA_PATH = $(PREFIX)/man/da/man1
++DATA_PATH = $(MANDIR)/da/man1
+ DIST      = chgrp.1 chmod.1 chown.1 dd.1 df.1 gnome-wm.1 make.1 Makefile læsmig AUTHORS ChangeLog
+ 
+ 
+@@ -12,11 +13,10 @@
+ 	cp -fR læsmig $(PREFIX)/doc/manpages-da-$(VERSION)  
+ 
+ install-data:
+-	mkdir $(PREFIX)/man/da
+-	mkdir $(PREFIX)/man/da/man1
++	mkdir -p $(DATA_PATH)
+ 	cp -fR *.1* $(DATA_PATH)
+ 
+-install: install-docs install-data
++install: install-data
+ 
+ uninstall:
+ 	rm -rf $(DATA_PATH)/
