@@ -1,7 +1,7 @@
 %define LNG da
 %define name man-pages-%LNG
 %define version 0.1.1
-%define release %mkrel 13
+%define release %mkrel 15
 
 Summary: Danish man pages from the Linux Documentation Project
 Name: %{name}
@@ -83,4 +83,68 @@ rm -fr %{buildroot}
 %ghost %config(noreplace) /var/cache/man/%LNG/whatis
 %config(noreplace) %attr(755,root,root) %{_sysconfdir}/cron.weekly/makewhatis-%LNG.cron
 %_mandir/%LNG/*
+
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.1-13mdv2011.0
++ Revision: 666366
+- mass rebuild
+
+* Sat Dec 04 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1.1-12mdv2011.0
++ Revision: 609317
+- rebuild
+- fix build
+- fix typos
+
+* Sat Dec 04 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1.1-11mdv2011.0
++ Revision: 609200
+- fix build
+- rebuild
+- rebuilt for 2010.1
+
+* Sat Mar 07 2009 Antoine Ginies <aginies@mandriva.com> 0.1.1-9mdv2009.1
++ Revision: 351567
+- rebuild
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 0.1.1-8mdv2009.0
++ Revision: 223164
+- rebuild
+
+* Tue Jan 15 2008 Thierry Vignaud <tv@mandriva.org> 0.1.1-7mdv2008.1
++ Revision: 152915
+- rebuild
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+- fix summary-ended-with-dot
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Tue May 15 2007 Adam Williamson <awilliamson@mandriva.org> 0.1.1-5mdv2008.0
++ Revision: 26773
+- clean spec, rebuild for new era
+
+
+* Thu Jul 24 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.1.1-4mdk
+- rebuild
+
+* Mon Jan 20 2003 Thierry Vignaud <tvignaud@mandrakesoft.com> 0.1.1-3mdk
+- build release
+
+* Wed May 29 2002 Thierry Vignaud <tvignaud@mandrakesoft.com> 0.1.1-2mdk
+- use new man-pages-LG template
+    - don't rebuild whatis on install since
+      - we've already build in package
+      - cron will rebuild it nightly and so add other package french man pages
+    - adapt to new man-pages-LG template
+    - requires man => 1.5j-8mdk for new man-pages framework
+    - use new std makewhatis to build whatis in spec and in cron entry 
+    - add cron entry to nightly update whatis db
+    - whatis db goes into /var/cache/man (so enable ro /usr)
+    - standard {Build,}Requires/buildroot/prereq/arc/provides/obsoletes
+    - remove duplicated summary
+
+* Fri Mar 08 2002 Thierry Vignaud <tvignaud@mandrakesoft.com> 0.1.1-1mdk
+- initial package
 
