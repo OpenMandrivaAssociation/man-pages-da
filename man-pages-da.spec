@@ -1,7 +1,7 @@
 %define LNG da
 %define name man-pages-%LNG
 %define version 0.1.1
-%define release %mkrel 15
+%define release 16
 
 Summary: Danish man pages from the Linux Documentation Project
 Name: %{name}
@@ -45,12 +45,12 @@ organized into the following sections:
 rm -fr %{buildroot}
 make PREFIX=%{buildroot}/usr install
 
-LANG=%LNG DESTDIR=%{buildroot} %{_sbindir}/makewhatis %{buildroot}/%_mandir/%LNG
+LANG=%LNG DESTDIR=%{buildroot} %{_bindir}/mandb %{buildroot}/%_mandir/%LNG
 
 mkdir -p %{buildroot}%{_sysconfdir}/cron.weekly
 cat > %{buildroot}%{_sysconfdir}/cron.weekly/makewhatis-%LNG.cron << EOF
 #!/bin/bash
-LANG=%LNG %{_sbindir}/makewhatis %_mandir/%LNG
+LANG=%LNG %{_bindir}/mandb %_mandir/%LNG
 exit 0
 EOF
 chmod a+x %{buildroot}%{_sysconfdir}/cron.weekly/makewhatis-%LNG.cron
