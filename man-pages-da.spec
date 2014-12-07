@@ -3,7 +3,7 @@
 Summary:	Danish man pages from the Linux Documentation Project
 Name:		man-pages-%{LNG}
 Version:	0.1.1
-Release:	22
+Release:	23
 License:	Distributable
 Group:		System/Internationalization
 Url:		http://www.sslug.dk/locale/man-sider/
