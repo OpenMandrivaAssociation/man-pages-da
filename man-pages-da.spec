@@ -3,7 +3,7 @@
 Summary:	Danish man pages from the Linux Documentation Project
 Name:		man-pages-%{LNG}
 Version:	0.1.1
-Release:	24
+Release:	25
 License:	Distributable
 Group:		System/Internationalization
 Url:		http://www.sslug.dk/locale/man-sider/
@@ -16,6 +16,7 @@ BuildRequires:	sed
 Requires:	locales-%{LNG}
 Requires:	man
 Autoreq:	false
+Conflicts:	filesystem < 3.0-17
 
 %description
 A large collection of man pages (reference material) from the Linux 
@@ -70,7 +71,6 @@ fi
 
 %files
 %doc læsmig AUTHORS ChangeLog
-%dir %{_mandir}/%{LNG}
 %dir /var/cache/man/%{LNG}
 %ghost %config(noreplace) /var/cache/man/%{LNG}/whatis
 %config(noreplace) %attr(755,root,root) %{_sysconfdir}/cron.weekly/makewhatis-%{LNG}.cron
