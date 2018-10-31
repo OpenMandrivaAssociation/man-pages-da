@@ -3,7 +3,7 @@
 Summary:	Danish man pages from the Linux Documentation Project
 Name:		man-pages-%{LNG}
 Version:	0.1.1
-Release:	25
+Release:	26
 License:	Distributable
 Group:		System/Internationalization
 Url:		http://www.sslug.dk/locale/man-sider/
@@ -70,7 +70,7 @@ fi
 %create_ghostfile /var/cache/man/%{LNG}/whatis root root 644
 
 %files
-%doc læsmig AUTHORS ChangeLog
+%doc lÃ¦smig AUTHORS ChangeLog
 %dir /var/cache/man/%{LNG}
 %ghost %config(noreplace) /var/cache/man/%{LNG}/whatis
 %config(noreplace) %attr(755,root,root) %{_sysconfdir}/cron.weekly/makewhatis-%{LNG}.cron
