@@ -70,9 +70,8 @@ fi
 %create_ghostfile /var/cache/man/%{LNG}/whatis root root 644
 
 %files
-%doc læsmig AUTHORS ChangeLog
+%doc AUTHORS ChangeLog
 %dir /var/cache/man/%{LNG}
 %ghost %config(noreplace) /var/cache/man/%{LNG}/whatis
 %config(noreplace) %attr(755,root,root) %{_sysconfdir}/cron.weekly/makewhatis-%{LNG}.cron
 %{_mandir}/%{LNG}/*
-
