@@ -35,7 +35,7 @@ organized into the following sections:
 
 %prep
 %setup -qn manpages-da-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 
