@@ -6,7 +6,7 @@ Version:	0.1.1
 Release:	27
 License:	Distributable
 Group:		System/Internationalization
-Url:		http://www.sslug.dk/locale/man-sider/
+Url:		https://www.sslug.dk/locale/man-sider/
 Source0:	http://www.sslug.dk/locale/man-sider/manpages-da-%{version}.tar.bz2
 Patch0:		manpages-da-0.1.1-manpath.patch
 BuildArch:	noarch
